@@ -1,12 +1,12 @@
 # BRC691
 
-We propose a new standard for ordinals collections to combine traditional pfp and on-chain rune miner nft with multi layered recursive inscriptions. This standard provides a more intriguing on-chain features combining the rune miner. The pfp uses a method similar to brc69 but is more flexible which suport gif trait. With the recursive inscriptions, brc691 integrates the on-chain rune miner with pfp nft. The miner hashrate is determined by the attributes value of pfp nft and the blockchain data, such as blockheight, inscription id and so on.
+We propose a new standard for ordinals collections to combine traditional pfp and on-chain rune miner nft with multi layered recursive inscriptions. This standard provides a more intriguing on-chain features combining the rune miner. The pfp uses a method similar to BRC69 but is more flexible which suport dynamic trait, such as gif format. With the recursive inscriptions, BRC691 integrates the on-chain rune miner with pfp nft. The miner hashrate is determined by the attributes value of pfp nft and the blockchain data, such as blockheight, inscription id and so on.
 
 ---
 
 ## Context
 
-With the upcoming rune protocol, some rune mining collection have been launched, but these nft collections are all the same pictures with no features and boring patterns. At the same time, some protocols such as brc69/brc333 have reduced the inscription fee of pfp nft using recursive inscriptions. To make rune nft more interesting and reduce inscription fee, we can improve the current standard for launching pfp-rune ordinals collections.
+With the upcoming rune protocol, some rune mining collection have been launched, but these nft collections are all the same pictures with no features and boring patterns. At the same time, some protocols such as BRC69/BRC333 have reduced the inscription fee of pfp nft using recursive inscriptions. To make rune nft more interesting and reduce inscription fee, we can improve the current standard for launching pfp-rune ordinals collections.
 
 ---
 
@@ -37,7 +37,7 @@ The deploy operation is a JSON/Text inscription that contains general informatio
 
 ```javascript
 {
-   "p":"brc691",
+   "p":"BRC691",
    "op":"deploy",
    "collection":{
       "slug":"runedoge",
@@ -69,7 +69,7 @@ The deploy operation is a JSON/Text inscription that contains general informatio
 
 | Key        | Required | Description                                                  |
 | ---------- | -------- | ------------------------------------------------------------ |
-| p          | YES      | Protocol: Helps other systems identify and process brc691 events |
+| p          | YES      | Protocol: Helps other systems identify and process BRC691 events |
 | op         | YES      | Operation: Type of event (Deploy, Mint)             |
 | slug       | YES      | Slug: Identifier of the collection. Not enforced if no indexer implemented |
 | name       | NO       | Name: Human readable name of the collection                  |
@@ -89,8 +89,7 @@ Down belove we propose a simple render image logic and rune miner parameter acqu
 ``````javascript
 /*
 {
-  "p": "brc691",
-  "op": "compile",
+  "p": "BRC691",
   "s": "runedoge"
 }
 */
@@ -132,7 +131,7 @@ let insId = window.location.pathname.split("/")[2]?window.location.pathname.spli
 The Mint operation uses an HTML type inscription that stores the index of the traits used to generate the final asset and points back to the iframe inscription, in a single line. This approach allows any front-end with Recursive Inscription to automatically render the image and miner data using on-chain inscribed data.
 
 ``````html
-<script t="7,6,5,4,1,2,3" src="/content/<compile inscription id>" m='{"p":"brc691" "op":"mint" "s":"runedoge" "id":"0"}'></script>
+<script t="7,6,5,4,1,2,3" src="/content/<compile inscription id>" m='{"p":"BRC691" "op":"mint" "s":"runedoge" "id":"0"}'></script>
 ``````
 
 | Key  | Required | Description                                                  |
@@ -145,6 +144,6 @@ The Mint operation uses an HTML type inscription that stores the index of the tr
 
 ## Impact
 
-Implementing the BRC691 standard can add dynamic effects for the brc69 protocol collections and provide integration of on-chain mining functions with pfp. Because the unique feature images are written only once in the Deploy transaction, the asset consists of an HTML file that only references the features in a single line of approximately 80 bytes. Any frontend with a recursive inscription implementation can use on-chain deployment of inscriptions to render images without any additional steps.
+Implementing the BRC691 standard can add dynamic effects for the BRC69 protocol collections and provide integration of on-chain mining functions with pfp. Because the unique feature images are written only once in the Deploy transaction, the asset consists of an HTML file that only references the features in a single line of approximately 80 bytes. Any frontend with a recursive inscription implementation can use on-chain deployment of inscriptions to render images without any additional steps.
 
 ---
