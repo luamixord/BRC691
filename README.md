@@ -48,7 +48,7 @@ The deploy operation is a JSON/Text inscription that contains general informatio
    },
    "attributes":[
       "hand": [
-        ["7cc44bb8056354222c59f721dd1b6f04f1b7b6930fbf7115b809007b65ccadf1i0", 15]
+        ["c778a8aced63179dd753ec919479f7bfa334a89c758c6cc14594d416e83fab00i0", 20]
       ],
       "head": [
         ["f5f27185fb342d4d4ef7f1edbd8332c5d86c7c6eabb6d5d434545ab0b6aeef2ei0", 14]
